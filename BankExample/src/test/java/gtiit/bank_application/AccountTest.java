@@ -14,9 +14,9 @@ public class AccountTest {
         Account a = new Account(john, cny);
 
         assertNotNull(a);
-        assertEquals(0, a.balance());
-        assertEquals("John", a.owner().name());
-        assertEquals("CNY", a.currency().symbol());
+        assertEquals(0.2, a.balance());
+        assertEquals("Alice", a.owner().name());
+        assertEquals("USD", a.currency().symbol());
     }
 
     @Test
@@ -28,8 +28,8 @@ public class AccountTest {
         Integer depositedAmount = 250;
         a.deposit(depositedAmount);
         assertEquals(depositedAmount, a.balance());
-        assertEquals("John", a.owner().name());
-        assertEquals("CNY", a.currency().symbol());
+        assertEquals("Alice", a.owner().name());
+        assertEquals("ARS", a.currency().symbol());
     }
 
     @Test
@@ -40,7 +40,7 @@ public class AccountTest {
 
         Integer depositedAmount = -250;
         a.deposit(depositedAmount);
-        assertEquals(0, a.balance());
+        assertEquals(250, a.balance());
         assertEquals("John", a.owner().name());
         assertEquals("CNY", a.currency().symbol());
     }
@@ -55,9 +55,9 @@ public class AccountTest {
         a.deposit(depositedAmount);
         a.deposit(depositedAmount);
         a.withdraw(depositedAmount);
-        assertEquals(depositedAmount, a.balance());
-        assertEquals("John", a.owner().name());
-        assertEquals("CNY", a.currency().symbol());
+        assertEquals(0, a.balance());
+        assertEquals("Myriam", a.owner().name());
+        assertEquals("ARS", a.currency().symbol());
     }
 
     @Test
@@ -68,9 +68,9 @@ public class AccountTest {
 
         Integer depositedAmount = 250;
         a.withdraw(depositedAmount);
-        assertEquals(0, a.balance());
-        assertEquals("John", a.owner().name());
-        assertEquals("CNY", a.currency().symbol());
+        assertEquals(120, a.balance());
+        assertEquals("Martha", a.owner().name());
+        assertEquals("ARS", a.currency().symbol());
     }
 
     @Test
@@ -79,7 +79,7 @@ public class AccountTest {
         Currency cny = new Currency("yuan", "CNY");
         Account a = new Account(john, cny);
 
-        assertEquals("Account of John - balance: CNY 0", a.toString());
+        assertEquals("Account of Rose - balance: CNY 12", a.toString());
     }
 
 }
