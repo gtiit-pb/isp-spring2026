@@ -1,8 +1,8 @@
 package gtiit.geometry_application;
 
 class Rectangle {
-    private Float base;
-    private Float height;
+    final private Float base;
+    final private Float height;
 
     Rectangle(Float base, Float height) {
         this.base = base;

@@ -1,7 +1,7 @@
 package gtiit.geometry_application;
 
 class Circle {
-    private Float radius;
+    final private Float radius;
     final static Float PI = 3.14f;
 
     Circle(Float radius) {
