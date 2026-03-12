@@ -1,7 +1,7 @@
 package gtiit.geometry_application;
 
 public class Square {
-    private Float side;
+    private final Float side;
 
     Square(Float side) {
         this.side = side;
